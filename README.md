@@ -1,55 +1,73 @@
-#AWS-MLOPS-Tutorial
+# AWS MLOps Tutorial
 
-MLOps 100-Day Hands-On Journey
-Progress
-Day	Topic	Status
-1	Python Virtual Environment for ML	🔨 In Progress
-2	JupyterLab Server Configuration	⬜ Not Started
-3	uv Lockfile	⬜ Not Started
-4	.gitignore and Git Artifacts	⬜ Not Started
-5	ML Workflow Makefile	⬜ Not Started
+A hands-on, 100-day journey through the tools and practices used to build reproducible machine-learning workflows on AWS.
 
+> **Current focus:** setting up the local development foundation before moving on to AWS and MLOps workflows.
 
-Day 1 - Python Virtual Environment for ML
-Objective
-Create an isolated Python environment for the ML project.
+## Progress
 
-Hands-On
-Create environment
+| Day | Topic | Status |
+| ---: | --- | --- |
+| 1 | Python virtual environment for ML | ✅ Completed |
+| 2 | JupyterLab server configuration | ⬜ Not started |
+| 3 | `uv` lockfile | ⬜ Not started |
+| 4 | `.gitignore` and Git artifacts | ⬜ Not started |
+| 5 | ML workflow `Makefile` | ⬜ Not started |
+
+## Day 1 — Python Virtual Environment for ML
+
+### Objective
+
+Create an isolated Python environment for the project so its packages are separate from system Python and can be recorded for reproducibility.
+
+### Set up the environment
+
+Create a virtual environment:
+
+```bash
 python3 -m venv ml-env
+```
 
-Activate environment
+Activate it on macOS or Linux:
+
+```bash
 source ml-env/bin/activate
+```
 
-Verify Python
+Confirm that Python and pip resolve to the environment, then inspect installed packages:
+
+```bash
 which python
-
-Verify pip
 which pip
-
-Check dependencies
 pip freeze
+```
 
-Save dependencies
+Save the installed dependencies to `requirements.txt`:
+
+```bash
 pip freeze > requirements.txt
+```
 
-What I Learned
-Why Python virtual environments are required
-System Python vs virtual-environment Python
-How environment activation changes the Python/pip paths
-How pip manages packages
-How pip freeze captures installed dependencies
-Why requirements.txt helps reproducibility
-Issues Encountered
-I initially used:
+### What I learned
 
-python freeze
+- Why Python virtual environments are useful for ML projects.
+- How system Python differs from the Python inside an activated environment.
+- How activation changes the `python` and `pip` paths.
+- How `pip` installs packages and `pip freeze` lists installed dependencies.
+- How `requirements.txt` helps record dependencies for reproducibility.
 
-Python treated freeze as a Python file.
+### Issue encountered
 
-The correct command is:
+I initially ran `python freeze`. Python interpreted `freeze` as a script name. The correct command is:
 
+```bash
 pip freeze
+```
 
-Status
-✅ Completed
+### Status
+
+✅ **Completed**
+
+---
+
+*This README will be updated as the 100-day journey progresses.*
