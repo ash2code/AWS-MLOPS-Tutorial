@@ -1,40 +1,53 @@
+<div align="center">
+
 # AWS MLOps Tutorial
 
-A hands-on, 100-day journey through the tools and practices used to build reproducible machine-learning workflows on AWS.
+### A 100-day, hands-on journey to building practical and reproducible machine-learning workflows with AWS.
 
-> **Current focus:** setting up the local development foundation before moving on to AWS and MLOps workflows.
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Learning%20path-232F3E?logo=amazonaws&logoColor=white)
+![Journey](https://img.shields.io/badge/100--day-journey-6C63FF)
 
-## Progress
+</div>
+
+---
+
+## About this project
+
+This repository documents a hands-on learning journey through the foundations of MLOps, machine-learning development, and AWS. Each day focuses on a practical topic, with notes and commands captured along the way.
+
+**Current focus:** creating a clean, reproducible local Python development environment.
+
+## Learning roadmap
 
 | Day | Topic | Status |
-| ---: | --- | --- |
-| 1 | Python virtual environment for ML | ✅ Completed |
+| ---: | --- | :---: |
+| 1 | Python virtual environment for ML | ✅ Complete |
 | 2 | JupyterLab server configuration | ⬜ Not started |
 | 3 | `uv` lockfile | ⬜ Not started |
 | 4 | `.gitignore` and Git artifacts | ⬜ Not started |
 | 5 | ML workflow `Makefile` | ⬜ Not started |
 
-## Day 1 — Python Virtual Environment for ML
+> The roadmap will grow as the journey progresses.
 
-### Objective
+## Day 1 — Python virtual environment for ML
 
-Create an isolated Python environment for the project so its packages are separate from system Python and can be recorded for reproducibility.
+### Goal
 
-### Set up the environment
+Create an isolated Python environment so project packages stay separate from system Python and can be recorded for future setup.
 
-Create a virtual environment:
+### Create and activate the environment
+
+The commands below are for macOS and Linux.
 
 ```bash
 python3 -m venv ml-env
-```
-
-Activate it on macOS or Linux:
-
-```bash
 source ml-env/bin/activate
 ```
 
-Confirm that Python and pip resolve to the environment, then inspect installed packages:
+### Verify Python and pip
+
+With the environment active, check that Python and pip point to the virtual environment and inspect the installed packages:
 
 ```bash
 which python
@@ -42,32 +55,32 @@ which pip
 pip freeze
 ```
 
-Save the installed dependencies to `requirements.txt`:
+### Record dependencies
 
 ```bash
 pip freeze > requirements.txt
 ```
 
-### What I learned
+This records the packages currently installed in the active environment. It can be used as a starting point for recreating the environment.
 
-- Why Python virtual environments are useful for ML projects.
-- How system Python differs from the Python inside an activated environment.
-- How activation changes the `python` and `pip` paths.
-- How `pip` installs packages and `pip freeze` lists installed dependencies.
-- How `requirements.txt` helps record dependencies for reproducibility.
+### Key takeaways
 
-### Issue encountered
+- Virtual environments isolate project dependencies from system Python.
+- Activating the environment changes which `python` and `pip` commands are used.
+- `pip freeze` lists installed packages, and redirecting its output records them in `requirements.txt`.
 
-I initially ran `python freeze`. Python interpreted `freeze` as a script name. The correct command is:
+### Troubleshooting note
+
+I initially ran `python freeze`, which makes Python look for a script named `freeze`. To list installed packages, use:
 
 ```bash
 pip freeze
 ```
 
-### Status
-
-✅ **Completed**
+**Day 1 status: ✅ Complete**
 
 ---
 
-*This README will be updated as the 100-day journey progresses.*
+## Follow the journey
+
+As new topics are completed, this README will be updated with progress, hands-on steps, and lessons learned.
